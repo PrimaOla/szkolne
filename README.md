@@ -17,6 +17,7 @@ To jest prosta aplikacja konsolowa napisana w C# (.NET), która pozwala na:
 - `FindMaximum(List<double> numbers)` - znajduje wartość maksymalną
 - `FindMinimum(List<double> numbers)` - znajduje wartość minimalną
 - `CalculateMax(int[] values)` - znajduje maksimum w tablicy int
+- `CalculateMin(int[] values)` - znajduje minimum w tablicy int
 
 ## Jak uruchomić
 
