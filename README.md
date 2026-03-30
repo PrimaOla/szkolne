@@ -26,10 +26,9 @@ cd SzkolneApp
 dotnet run
 
 
-## Dlaczego last merge nie był fast-forward?
+### Dlaczego last merge nie był fast-forward?
 
 Merge `feature-max` do `main` **nie był fast-forward** z następujących powodów:
-
 1. **Dwie niezależne gałęzie** - Po utworzeniu `feature-max` dodaliśmy nowy commit bezpośrednio na `main` (README.md)
 2. **Dywergencja historii** - Obie gałęzie miały swoje własne commity: 
    - `feature-max`: Add CalculateMax method
@@ -39,11 +38,21 @@ Merge `feature-max` do `main` **nie był fast-forward** z następujących powod�
 
 To jest **3-way merge** - Git musiał połączyć dwie diverging gałęzie.
 
-## Autor
+## Kiedy Git wykona fast-forward, a kiedy powstaje merge commit?
 
-PrimaOla
+Fast-forward wykonuje się gdy historia jest liniowa - na głównej gałęzi nie ma nowych commitów od czasu utworzenia gałęzi feature, więc Git po prostu przesuwa wskaźnik. Merge commit powstaje gdy historia się rozeszła - obie gałęzie mają swoje nowe commity, więc Git musi stworzyć specjalny commit, który je łączy.
 
-## Licencja
+## Czym w praktyce różni się merge od rebase?
 
-PJATK
+Merge zachowuje pełną historię i tworzy commit merge'a, widać gałęzie i kiedy zmiana została zintegrowana. Rebase przepisuje commity na nową podstawę tworząc liniową historię bez commita merge'a, ale jest bardziej niebezpieczny dla commitów już wypchnętych na GitHub.
+
+## W jaki sposób został rozwiązany konflikt w Twoim repozytorium?
+
+Konflikt w pliku Program.cs rozwiązałam świadomie - wybrałam najlepsze elementy z obu gałęzi: userInput zamiast input (bardziej czytelne), "koniec" zamiast "quit" (bardziej naturalne). Upewniłam się na koniec, że kod nadal działa. 
+
+#### Autor
+
+PrimaOla / Aleksandra Olszewska
+
+
 
