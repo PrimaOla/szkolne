@@ -8,12 +8,12 @@ Console.WriteLine("Podaj liczby do analizy (wpisz 'koniec' aby skończyć):");
 
 while (true)
 {
-    Console.Write("Liczba: ");
-    string input = Console.ReadLine() ?? "";
+    Console.Write("Podaj liczbę lub napisz 'koniec': ");
+    string userInput = Console.ReadLine() ?? "";
     
 
     // walidacja - czy input nie jest pusty
-    if (string.IsNullOrWhiteSpace(input))
+    if (string.IsNullOrWhiteSpace(userInput))
     {
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("BŁĄD: Wprowadź coś. Pole nie może być puste.");
@@ -21,12 +21,12 @@ while (true)
         continue; 
     }
 
-    if (input.ToLower() == "koniec")
+    if (userInput.ToLower() == "koniec")
     {
         break;
     }
     
-    if (double.TryParse(input, out double number))
+    if (double.TryParse(userInput, out double number))
     {
         numbers.Add(number);
         Console.WriteLine($"Dodano: {number}");
