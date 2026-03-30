@@ -11,6 +11,16 @@ while (true)
     Console.Write("Liczba: ");
     string input = Console.ReadLine() ?? "";
     
+
+    // walidacja - czy input nie jest pusty
+    if (string.IsNullOrWhiteSpace(input))
+    {
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine("BŁĄD: Wprowadź coś. Pole nie może być puste.");
+        Console.ResetColor();
+        continue; 
+    }
+
     if (input.ToLower() == "koniec")
     {
         break;
@@ -19,7 +29,7 @@ while (true)
     if (double.TryParse(input, out double number))
     {
         numbers.Add(number);
-        Console.WriteLine($"✓ Dodano: {number}");
+        Console.WriteLine($"Dodano: {number}");
     }
     else
     {
