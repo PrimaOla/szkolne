@@ -23,4 +23,19 @@ while (true)
     }
 }
 
+
+
 Console.WriteLine();
+
+
+if (numbers.Count > 0)
+{
+    double average = StatisticsHelper.CalculateAverage(numbers);
+    double maximum = StatisticsHelper.FindMaximum(numbers);
+    double minimum = StatisticsHelper.FindMinimum(numbers);
+    
+    Console.WriteLine("=== Statystyki ===");
+    Console.WriteLine($"Średnia: {average:F2}");
+    Console.WriteLine($"Maksimum: {maximum}");
+    Console.WriteLine($"Minimum: {minimum}");
+}
