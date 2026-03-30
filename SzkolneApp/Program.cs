@@ -21,6 +21,12 @@ while (true)
         numbers.Add(number);
         Console.WriteLine($"✓ Dodano: {number}");
     }
+    else
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("BŁĄD: To nie jest prawidłowa liczba. Spróbuj ponownie.");
+        Console.ResetColor();
+    }
 }
 
 
@@ -38,4 +44,10 @@ if (numbers.Count > 0)
     Console.WriteLine($"Średnia: {average:F2}");
     Console.WriteLine($"Maksimum: {maximum}");
     Console.WriteLine($"Minimum: {minimum}");
+}
+else if (numbers.Count == 0)
+{
+    Console.ForegroundColor = ConsoleColor.Yellow;
+    Console.WriteLine("BŁĄD: Nie podano żadnych liczb. Nie można obliczyć statystyk.");
+    Console.ResetColor();
 }
