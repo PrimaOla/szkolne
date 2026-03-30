@@ -21,7 +21,7 @@ while (true)
         continue; 
     }
 
-    if (input.ToLower() == "koniec")
+    if (input.ToLower() == "quit")
     {
         break;
     }
