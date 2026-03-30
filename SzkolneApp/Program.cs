@@ -61,3 +61,8 @@ else if (numbers.Count == 0)
     Console.WriteLine("BŁĄD: Nie podano żadnych liczb. Nie można obliczyć statystyk.");
     Console.ResetColor();
 }
+
+Console.WriteLine("\n=== Test metody CalculateMin"); 
+int[] testMinArray = {10, 5, 30, 2, 50};
+int testMin = StatisticsHelper.CalculateMin(testMinArray);
+Console.WriteLine($"Minimum z testowej tablicy to {testMin}");
